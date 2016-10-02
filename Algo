@@ -1,0 +1,31 @@
+stack=[]
+def get_input():
+  num_elements=list()
+  num=raw_input("tell us the total num of elements"+"\n");
+  print 'The elemnents are:'
+  del stack[:]
+  for i in range(int(num)):
+    a=int(raw_input());
+    
+    stack.append(a);
+  a=True
+  while(a):
+    a=False
+    for i in range(int(num)):
+      for k in range(int(num)-1,i,-1):
+        if(stack[k-1]>stack[k]):
+          swap(stack,k-1,k);
+      print stack    
+
+
+
+def swap(stack,i,j):
+      tmp=stack[i];
+      stack[i]=stack[j]
+      stack[j]=tmp;
+
+
+
+get_input();
+
+    
